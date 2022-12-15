@@ -10,23 +10,24 @@ function onInit() {
   gCtx = gElCanvas.getContext('2d')
   renderGalleryImgs()
 
-
-  // renderMeme()
-  // drawText('And not one minute later', 200, 50)
 }
 
 function renderMeme() {
-  console.log('hi from render meme')
+
   const elImg = new Image() // Create a new html img element
   var meme = getMeme()
-  // console.log('gMeme :', meme)
-  var txt = meme.lines[0].txt
-  // console.log('txt from render', meme.lines[0].txt)
+  var lineIdx = meme.selectedLineIdx
+  console.log('lineIdx :', lineIdx)
   elImg.src = meme.selectedImgUrl
   // console.log(meme.selectedImgUrl)
   elImg.onload = () => {
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-    drawText(txt, 225, 400)
+    console.log('meme.lines : ', meme.lines)
+
+    var lines = meme.lines
+    console.log(lines)
+    drawText(lines[0].txt, lines[0].x, lines[0].y, 0)
+    drawText(lines[1].txt, lines[1].x, lines[1].y, 1)
   }
 }
 
@@ -47,12 +48,21 @@ function onChangeFillColor(colorVal) {
 }
 function onImgSelect(elImg) {
   setImg(elImg)
+  resetLinesDetails()
+  resetEditorController()
   renderMeme()
 }
 
 function onChangeTxt(val) {
   console.log('value : ', val)
   setLineTxt(val)
+  renderMeme()
+}
+
+function onChangeLine() {
+  resetEditorController()
+  console.log('change line')
+  setLineIdx()
   renderMeme()
 }
 
@@ -64,16 +74,16 @@ function onDeleteBtn() {
   renderMeme()
 }
 
-function drawText(text, x, y) {
+function drawText(text, x, y, idx) {
   var meme = getMeme()
-  var fontSizee = `${gMeme.lines[0].size}px`
-  console.log('size from drawTxt : ', fontSizee)
-  console.log(meme.lines[0].color)
-  gCtx.lineWidth = 2
+  var lineIdx = meme.selectedLineIdx
+  var fontSize = `${gMeme.lines[idx].size}px`
+  console.log('size from drawTxt : ', fontSize)
+  console.log(meme.lines[idx].color)
+  gCtx.lineWidth = 3
   gCtx.strokeStyle = 'black'
-  gCtx.fillStyle = meme.lines[0].color
-  gCtx.font = `700 ${fontSizee} arial`
-  // gCtx.font = `"${fontSizee}px"`
+  gCtx.fillStyle = meme.lines[idx].color
+  gCtx.font = `700 ${fontSize} arial`
   gCtx.textAlign = 'center'
   gCtx.textBaseline = 'button'
 
@@ -81,3 +91,12 @@ function drawText(text, x, y) {
   gCtx.strokeText(text, x, y) // Draws (strokes) a given text at the given (x, y) position.
 }
 
+
+function resetEditorController() {
+  const meme = getMeme()
+  const elTxtInput = document.querySelector('.text-line')
+  console.log('catch input :', elTxtInput.value)
+  elTxtInput.value = ''
+  const elColorInput = document.querySelector('.fill-color')
+  elColorInput.value = '#FFFFFF'
+}

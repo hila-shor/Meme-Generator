@@ -14,13 +14,45 @@ let gMeme = {
       txt: '',
       size: 40,
       align: 'left',
-      color: 'white'
+      color: 'white',
+      x: 225,
+      y: 400
+    }, {
+      txt: '',
+      size: 40,
+      align: 'left',
+      color: 'white',
+      x: 225,
+      y: 50
+
     }
+
   ]
 }
 createImgs()
 console.log('gImgs :>> ', gImgs);
 console.log(gMeme)
+
+function resetLinesDetails() {
+  gMeme.lines = [
+    {
+      txt: '',
+      size: 40,
+      align: 'left',
+      color: 'white',
+      x: 225,
+      y: 400
+    }, {
+      txt: '',
+      size: 40,
+      align: 'left',
+      color: 'white',
+      x: 225,
+      y: 50
+
+    }
+  ]
+}
 
 function setImg(elImg) {
   // console.log(elImg.src)
@@ -28,18 +60,26 @@ function setImg(elImg) {
   gMeme.selectedImgId = elImg.getAttribute('data-id')
   gMeme.selectedImgUrl = elImg.src
 }
+function setLineIdx() {
+  gMeme.selectedLineIdx = (gMeme.selectedLineIdx === 0) ? 1 : 0
+  console.log('from setLineIdx- server : ', gMeme.selectedLineIdx)
+}
 function setFontSize(diff) {
-  gMeme.lines[0].size += (+diff)
-  console.log(gMeme.lines[0].size)
+  const lineIdx = gMeme.selectedLineIdx
+  gMeme.lines[lineIdx].size += (+diff)
+  console.log(gMeme.lines[lineIdx].size)
 }
 
 function setLineTxt(val) {
-  gMeme.lines[0].txt = val
+  const lineIdx = gMeme.selectedLineIdx
+  gMeme.lines[lineIdx].txt = val
   // var txt = gMeme.lines[0].txt
   // console.log('val from set text in service :', txt)
 }
 function setTextColor(colorVal) {
-  gMeme.lines[0].color = colorVal
+  const lineIdx = gMeme.selectedLineIdx
+  gMeme.lines[lineIdx].color = colorVal
+  console.log('gMeme from set color : ', gMeme)
   console.log(gMeme.lines[0].color)
 }
 
@@ -76,3 +116,24 @@ function getMeme() {
 function getgImgs() {
   return gImgs;
 }
+
+
+
+
+// function renderMeme() {
+//   console.log('hi from render meme')
+//   const elImg = new Image() // Create a new html img element
+//   var meme = getMeme()
+//   var lineIdx = meme.selectedLineIdx
+//   var linePosX = meme.lines[0].x
+//   var linePosY = meme.lines[0].y
+//   console.log('gMeme :', linePosX)
+//   var txt = meme.lines[0].txt
+//   // console.log('txt from render', meme.lines[0].txt)
+//   elImg.src = meme.selectedImgUrl
+//   // console.log(meme.selectedImgUrl)
+//   elImg.onload = () => {
+//     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+//     drawText(txt, linePosX, linePosY)
+//   }
+// }
