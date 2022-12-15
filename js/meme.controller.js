@@ -42,7 +42,7 @@ function onChangeTxt(val) {
 }
 
 function onDeleteBtn() {
-
+  clearTxtLine()
   console.log('hi from delete btn')
   var meme = getMeme()
   var txt = meme.lines[0].txt
@@ -52,6 +52,8 @@ function onDeleteBtn() {
 }
 
 function drawText(text, x, y) {
+  var meme = getMeme()
+  console.log(meme)
   gCtx.lineWidth = 2
   gCtx.strokeStyle = 'black'
   gCtx.fillStyle = 'white'
@@ -63,13 +65,3 @@ function drawText(text, x, y) {
   gCtx.strokeText(text, x, y) // Draws (strokes) a given text at the given (x, y) position.
 }
 
-function renderGalleryImgs() {
-  let imgs = getgImgs()
-  var strHTML = '';
-  imgs.forEach((img, idx) => {
-    strHTML += `<div class="img-item"><img class="img${idx} img" data-id="${idx + 1}" src="${img.src}" alt="" onclick="onImgSelect(this)"></div>`
-  });
-  var elImgsGallery = document.querySelector('.imgs-gallery');
-  elImgsGallery.innerHTML = strHTML;
-
-}

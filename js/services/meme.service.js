@@ -7,6 +7,7 @@ let gImgs = []
 let gMeme = {
   selectedImgId: 1,
   selectedImgUrl: '',
+  selectedFillColor: '',
   selectedLineIdx: 0,
   lines: [
     {
