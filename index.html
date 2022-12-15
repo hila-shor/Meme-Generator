@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <title>Meme-Generator</title>
 </head>
-<body>
+<body onload="onInit()">
 
   <header>
     <img src="img/logo.png" >
@@ -18,21 +18,26 @@
     </ul>
   </header>
 
-  
-
   <main>
     <section class="gallery">
-      <div class="select-img"></div>
-      <div class="img-gallery"></div>
+      <div class="filters"></div>
+      <div class="imgs-gallery flex"></div>
     </section>
-    <section class="editor-contanier">
-      <div class="canvas"></div>
-      <div class="editor"></div>
+    <section class="editor-contanier flex justify-center  "> 
+      <div class="canvas-container">
+        <canvas class="canvas" height="450" width="450" > </canvas>
+      </div>
+      <div class="editor">
+        <input class="text-line" type="text" data-trans="lineText" placeholder="Type a sentence" oninput="onChangeTxt(this.value)">
+        <button class="delete-line" onclick="onDeleteBtn()">DELETE</button>
+        <button class="change-line" onclick="onChangeLine()">SWITCH LINE</button>
+      </div>
     </section>
   </main>
 
   <footer></footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/services/meme.service.js"></script>
+  <script src="js/meme.controller.js"></script>
 </body>
 </html>
