@@ -7,14 +7,14 @@ let gImgs = []
 let gMeme = {
   selectedImgId: 1,
   selectedImgUrl: '',
-  selectedFillColor: '',
+  // selectedFillColor: 'white',
   selectedLineIdx: 0,
   lines: [
     {
       txt: '',
-      size: 20,
+      size: 40,
       align: 'left',
-      color: 'red'
+      color: 'white'
     }
   ]
 }
@@ -28,14 +28,20 @@ function setImg(elImg) {
   gMeme.selectedImgId = elImg.getAttribute('data-id')
   gMeme.selectedImgUrl = elImg.src
 }
-
+function setFontSize(diff) {
+  gMeme.lines[0].size += (+diff)
+  console.log(gMeme.lines[0].size)
+}
 
 function setLineTxt(val) {
   gMeme.lines[0].txt = val
-  var txt = gMeme.lines[0].txt
+  // var txt = gMeme.lines[0].txt
   // console.log('val from set text in service :', txt)
 }
-
+function setTextColor(colorVal) {
+  gMeme.lines[0].color = colorVal
+  console.log(gMeme.lines[0].color)
+}
 
 
 function createImgs() {

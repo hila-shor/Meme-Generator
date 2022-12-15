@@ -21,7 +21,7 @@ function renderMeme() {
   var meme = getMeme()
   // console.log('gMeme :', meme)
   var txt = meme.lines[0].txt
-  // console.log('txt from render', txt)
+  // console.log('txt from render', meme.lines[0].txt)
   elImg.src = meme.selectedImgUrl
   // console.log(meme.selectedImgUrl)
   elImg.onload = () => {
@@ -30,6 +30,21 @@ function renderMeme() {
   }
 }
 
+
+function onChangeFontSize(diff) {
+  console.log(+diff)
+  setFontSize(diff)
+  renderMeme()
+}
+
+
+
+function onChangeFillColor(colorVal) {
+  // console.log(colorVal)
+
+  setTextColor(colorVal)
+  renderMeme()
+}
 function onImgSelect(elImg) {
   setImg(elImg)
   renderMeme()
@@ -42,22 +57,23 @@ function onChangeTxt(val) {
 }
 
 function onDeleteBtn() {
-  clearTxtLine()
-  console.log('hi from delete btn')
-  var meme = getMeme()
-  var txt = meme.lines[0].txt
-  txt = ''
-  console.log('txt line value :', txt)
-  drawText(txt, 225, 400)
+  const elInput = document.querySelector('.text-line')
+  console.log('catch input :', elInput.value)
+  elInput.value = ''
+  setLineTxt('')
+  renderMeme()
 }
 
 function drawText(text, x, y) {
   var meme = getMeme()
-  console.log(meme)
+  var fontSizee = `${gMeme.lines[0].size}px`
+  console.log('size from drawTxt : ', fontSizee)
+  console.log(meme.lines[0].color)
   gCtx.lineWidth = 2
   gCtx.strokeStyle = 'black'
-  gCtx.fillStyle = 'white'
-  gCtx.font = "700 35px arial"
+  gCtx.fillStyle = meme.lines[0].color
+  gCtx.font = `700 ${fontSizee} arial`
+  // gCtx.font = `"${fontSizee}px"`
   gCtx.textAlign = 'center'
   gCtx.textBaseline = 'button'
 

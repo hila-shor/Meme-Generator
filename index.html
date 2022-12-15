@@ -30,6 +30,12 @@
       <div class="editor">
         <input class="text-line" type="text" data-trans="lineText" placeholder="Type a sentence" oninput="onChangeTxt(this.value)">
         <button class="delete-line" onclick="onDeleteBtn()">DELETE</button>
+
+        <input class="fill-color" type="color" value= "#FFFFFF" onchange="onChangeFillColor(this.value)">
+
+
+        <button class="inc-font" onclick="onChangeFontSize('+10')">FONT➕</button>
+        <button class="dec-font" onclick="onChangeFontSize('-10')">FONT➖</button>
         <button class="change-line" onclick="onChangeLine()">SWITCH LINE</button>
       </div>
     </section>
