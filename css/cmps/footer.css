@@ -1,0 +1,19 @@
+
+.footer-wrapper{
+  background-color: var(--clr3);
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+
+.logo{
+margin-bottom: 0.3rem;
+}
+
+
+.footer-details{
+color: var(--clr2);
+font-family: Montserrat-reg;
+font-size: 0.8rem;
+}

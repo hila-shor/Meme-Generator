@@ -108,3 +108,4 @@ function resizeCanvas() {
   // Unless needed, better keep height fixed.
   gElCanvas.height = elContainer.offsetHeight - 50
 }
+

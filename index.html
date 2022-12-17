@@ -7,31 +7,30 @@
   <link rel="stylesheet" href="css/style.css" />
   <title>Meme-Generator</title>
 </head>
-<body class="main-layout" onload="onInit()">
+<body class="main-layout" onclick="toggleMenu()" onload="onInit()">
 
-  <header class="main-layout full onclick="toggleMenu()" ">
-    <div class="header-contanier  flex align-center space-between">
+  <header class="header main-layout full" >
+    <div class="header-container  flex align-center space-between ">
       <img src="svg/logo-top.svg" />
-      
-      <ul class=" clean-list main-nav  ">
-        <li class="last">Gallery</li>
-        <li class="">Mems</li>
-        <li class="">About</li>
-      </ul>
+      <div class="nav-wrapper  ">
+        <ul class=" clean-list main-nav flex ">
+          <li class="last " ><a class= "a  clean-link" href="#">Gallery</a></li>
+          <li class="" ><a class= "a   clean-link" href="#">Mems</a></li>
+          <li class=""><a class= "a  clean-link" href="#">About</a></li>
+        </ul>
+      </div>
     
-      <!-- <button class="menu-toggle-btn " onclick="toggleMenu()">☰</button> -->
+      <div class="menu-toggle-btn " onclick="toggleMenu()"> <img src="svg\hamburger.svg "></div>
     </div>
   </header>
 
   <main class="full main-layout">
-
     <section class="full  gallery main-layout ">
       <div class="filters"></div>
       <div class="full image-container  main-layout">
           <div class="imgs-gallery "></div>
       </div>
     </section>
-
 
     <section class="full  main-layout  editor-container"> 
         <div class="wrapper flex  ">
@@ -60,7 +59,6 @@
         </div>
     </section>
 
-
     <section class="about-me main-laypot flex ">
       <div class="about-wrapper ">
         <img class="me" src="svg/profil-pic.svg">
@@ -76,25 +74,20 @@
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="full"></footer>
+  <footer class=" footer-wrapper full flex">
+    <div class="img-logo-wrap"><img class="logo" src="svg/logo-top.svg"></div>
+    <p class="footer-details"> all rigths reserved 2019</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.body.classList.toggle('menu-open')
+    }
+  </script>
   
-
-  
-<script>
-  function toggleMenu() {
-    document.body.classList.toggle('menu-open')
-  }
-
-  function onClickChangeFillColor() {
-    var elColor = document.querySelector('.fill-color3');
-    elColor.click();
-  }
-
-</script>
-
-
   <script src="js/services/meme.service.js"></script>
   <script src="js/gallery.controller.js"></script>
   <script src="js/meme.controller.js"></script>

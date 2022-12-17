@@ -14,7 +14,7 @@
 @import './cmps/imgs-gallery.css';
 @import './cmps/editor.css';
 @import './cmps/about.css';
-/* @import './cmps/footer.css'; */
+@import './cmps/footer.css';
 
 
 
@@ -23,18 +23,3 @@ body{
   border: 1px solid var(--clr1);
 }
 
-
-
-
-
-
-footer{
-  /* width: 100vw; */
-  height: 207px;
-  background-color: var(--clr3);
-}
-
- /* .add-line{
-width: 20px;
-height: 20px;
- } */
