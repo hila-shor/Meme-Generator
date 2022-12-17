@@ -1,0 +1,83 @@
+
+.about-me{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.me{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+.details-wrapper{
+  flex-direction: column;
+  width:270px;
+  height: 180px;
+  align-items: center;
+  margin-top: 10px;
+}
+.details::after{
+  content: "(1994-2004). Created by David Crane and Marta Kauffman";
+}
+.name{
+  font-family: Montserrat-bold;
+  color:var(--clr3);
+}
+.details{
+  margin-top: 0.2rem;
+  font-family: Montserrat-reg;
+  text-align: center;
+}
+.socials-icons{
+  margin-top: 15px;
+  flex-direction: row;
+}
+.img-wrap{
+  margin:0.1rem;
+  margin-inline-end: 0.4rem;
+  background-color: var(--clr3);
+  border-radius: 6px;
+}
+.socials-icons img{
+  width: 20px;
+  height: 18px;
+  padding:0.2rem ;
+  box-sizing: content-box;
+}
+
+
+@media (min-width:800px){
+
+  .about-me{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .me{
+    width: 250px;
+    height: 250px;
+  }
+  .details-wrapper{
+    width:530px;
+    height: 300px;
+    justify-content: center;
+    align-items: flex-start;
+    padding-inline-start: 20px;
+    margin-top: 30px;
+  }
+  .name{
+    text-align: start;
+    color:var(--clr0);
+  }
+  .details{
+    text-align: start;
+  }
+  .details::after{
+    content: "";
+  }
+}
+

@@ -8,6 +8,7 @@ function onInit() {
   gElCanvas = document.querySelector('.canvas')
   // console.log('gElCanvas :>> ', gElCanvas);
   gCtx = gElCanvas.getContext('2d')
+  resizeCanvas()
   renderGalleryImgs()
 }
 
@@ -98,4 +99,12 @@ function resetEditorController() {
   elTxtInput.value = ''
   const elColorInput = document.querySelector('.fill-color')
   elColorInput.value = '#FFFFFF'
+}
+
+function resizeCanvas() {
+  const elContainer = document.querySelector('.canvas-container')
+  // Note: changing the canvas dimension this way clears the canvas
+  gElCanvas.width = elContainer.offsetWidth - 20
+  // Unless needed, better keep height fixed.
+  gElCanvas.height = elContainer.offsetHeight - 50
 }

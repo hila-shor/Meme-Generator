@@ -5,7 +5,8 @@
 }
 
 html {
-  font-family: Montserrat, sans-serif;
+  /* font-family: Montserrat, sans-serif; */
+  font-family: Montserrat-reg;
   color: var(--clr0);
   line-height: 1.2;
   margin: 0;

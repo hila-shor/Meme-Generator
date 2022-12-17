@@ -1,94 +1,201 @@
+
 /* EDITOR CONTAINER */
+
 .editor-container{
   background-color: var(--clr4);
-  
-  /* width:70vw;
-  height: 40vh; */
-  padding: 0rem;
+  padding:1rem;
   
 }
 .wrapper{
   border: 2px solid;
-}
-.editor{
-  /* padding-top: 100px; */
-  margin-top: 50px;
-}
-.editor-wrap2{
-  margin-top: 30px;
+  flex-direction: column;
+  justify-content:center;
 }
 
-.pref-container{
-width:450px;
-padding: 15px;
-}
+/* CANVAS */
+
 .canvas-container{
   border: 2px solid;
-  
-}
-canvas{
-  background-color: aqua;
-  display: block;
-  outline: 2px solid;
-  margin: auto;
 }
 
-/* PREFERENCE */
+canvas{
+  background-color: white;
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+/* MEME-EDITOR */
+
+.pref-container{
+  width:400px;
+  /* padding: 15px; */
+}
+.editor{
+  margin-top: 20px;
+  margin: 0;
+}
+.editor-wrap1{
+  margin-top: 15px;
+}
+.editor-wrap2{
+  margin-top: 10px;
+}
+
+/* user-preference */
 
 .grid-container1{
-    
   display: grid;
-  grid-template-columns:65px 65px 65px 65px 65px;
-  grid-template-rows: 65px 65px;
-  gap: 10px;
+  grid-template-columns:repeat(5, 62px);
+  grid-template-rows:repeat(2,55px);
+  gap: 2px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
   grid-template-areas: 
 
       "lini     lini       lini         lini      lini "
       " .   change-line  add-line   delete-line    .  " ;
-
 }
-
 .text-line{
-
-grid-area: lini;
-width:365px;
-height: 50px;
-border: none;
-border-radius: 12px;
-
+  grid-area: lini;
+  width:310px;
+  height: 45px;
+  border: none;
+  border-radius: 12px;
 }
 .change-line{
-grid-area: change-line;
+  grid-area: change-line;
 }
 .add-line{
-grid-area: add-line;
+  grid-area: add-line;
 }
 .delete-line{
-grid-area: delete-line;
+  grid-area: delete-line;
 }
 
 .grid-container2{
-display: grid;
-grid-template-columns:32.5px 65px 65px 65px 65px 32.5px ;
-grid-template-rows:65px;
-gap: 10px;
-grid-template-areas: 
+  display: grid;
+  grid-template-columns:25px repeat(4, 50px) 25px ;
+  grid-template-rows:55px;
+  gap: 10px;
+  margin-bottom: 25px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: 
 
-    " .       inc      dec            fil         strokee    .     " ;
-    margin-bottom: 25px;
+  " .  inc   dec    fil   strokee    .  " ;
 }
 
 .inc-font{
-grid-area: inc; 
+  grid-area: inc; 
 }
 .dec-font{ 
-grid-area: dec;
+  grid-area: dec;
 }
 .fill-color{
-grid-area: fil;
+  grid-area: fil;
 }
 .stroke-color{
-grid-area: strokee;
+  grid-area: strokee;
+}
+
+/* ICONS */
+.icon-img{
+  width:30px;
+  height: 30px;
+  display: inline-block;
+}
+
+.icon-wrap{
+  text-align: center;
+  background-color: var(--clr2);
+  width:45px;
+  height: 45px;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
 }
 
 
+@media (min-width: 600px){
+
+  /* ICONS */
+  .icon-wrap{
+    width:60px;
+    height:60px;
+    border-radius: 12px;
+  }
+  .icon-img{
+    width:36px;
+    height: 36px;
+  }
+
+/* EDITOR CONTAINER */
+  .wrapper{
+    align-items: center;
+  }
+  
+  .grid-container1{
+    grid-template-columns:65px 65px 65px 65px 65px;
+    grid-template-rows: 65px 65px;
+    gap: 10px;
+  }
+  .text-line{
+    width:365px;
+    height: 50px;
+  }
+  .grid-container2{
+    grid-template-columns:32.5px 65px 65px 65px 65px 32.5px ;
+    grid-template-rows:65px;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+} 
+
+@media (min-width:800px){
+
+  .editor-container{
+    padding:2rem; 
+  }
+
+    /* EDITOR CONTAINER */
+
+  .editor-wrap2{
+    margin-top: 20px;
+  }
+  .editor-wrap1{
+    margin-top: 20px;
+  }
+  .grid-container1{
+    grid-template-columns:65px 65px 65px 65px 65px;
+    grid-template-rows: 65px 65px;
+  }
+  .text-line{
+    width:365px;
+    height: 50px;
+  }
+  .grid-container2{
+    grid-template-columns:32.5px 65px 65px 65px 65px 32.5px ;
+    grid-template-rows:65px;
+  }
+} 
+
+@media (min-width:1100px){
+
+    /* EDITOR CONTAINER */
+  .wrapper{
+    border: 2px solid;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: flex-start;
+  }
+  .editor{
+    margin-top: 50px;
+  }
+  .editor-wrap2{
+    margin-top: 30px;
+  }
+
+} 
