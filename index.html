@@ -7,41 +7,76 @@
   <link rel="stylesheet" href="css/style.css" />
   <title>Meme-Generator</title>
 </head>
-<body onload="onInit()">
+<body class="main-layout" onload="onInit()">
 
-  <header>
-    <img src="img/logo.png" >
-    <ul>
-      <li>Gallery</li>
-      <li>Mems</li>
-      <li>About</li>
-    </ul>
+  <header class="main-layout full onclick="toggleMenu()" ">
+    <div class="header-contanier  flex align-center space-between">
+      <img src="svg/logo-top.svg" />
+      
+      <ul class=" clean-list main-nav  ">
+        <li class="last">Gallery</li>
+        <li class="">Mems</li>
+        <li class="">About</li>
+      </ul>
+    
+      <!-- <button class="menu-toggle-btn " onclick="toggleMenu()">☰</button> -->
+    </div>
   </header>
 
-  <main>
-    <section class="gallery">
+  <main class="full main-layout">
+
+    <section class="full  gallery main-layout ">
       <div class="filters"></div>
-      <div class="imgs-gallery flex"></div>
+      <div class="full image-container  main-layout">
+          <div class="imgs-gallery "></div>
+      </div>
     </section>
-    <section class="editor-contanier flex justify-center  "> 
-      <div class="canvas-container">
-        <canvas class="canvas" height="450" width="450" > </canvas>
-      </div>
-      <div class="editor">
-        <input class="text-line" type="text" data-trans="lineText" placeholder="Type a sentence" oninput="onChangeTxt(this.value)">
-        <button class="delete-line" onclick="onDeleteBtn()">DELETE</button>
-
-        <input class="fill-color" type="color" value= "#FFFFFF" onchange="onChangeFillColor(this.value)">
 
 
-        <button class="inc-font" onclick="onChangeFontSize('+10')">FONT➕</button>
-        <button class="dec-font" onclick="onChangeFontSize('-10')">FONT➖</button>
-        <button class="change-line" onclick="onChangeLine()">SWITCH LINE</button>
-      </div>
+    <section class="full  main-layout  editor-container"> 
+        <div class="wrapper flex space-between  ">
+          <div class="canvas-container">
+            <canvas class="canvas" height="450" width="450" > </canvas>
+          </div>
+          <div class="pref-container">
+            <div class="editor">
+    
+                <div class="editor-wrap1 grid-container1">
+                  <input class="text-line" type="text" data-trans="lineText" placeholder="Type a sentence" oninput="onChangeTxt(this.value)">
+                  <div class="icon-wrap flex change-line" onclick="onChangeLine()"><img class="icon-img " src="icons/up-and-down-opposite-double-arrows-side-by-side.png"></div>
+                  <div class="icon-wrap flex add-line"><img class="icon-img " src="icons/add.png" ></div>
+                  <div class="icon-wrap flex delete-line" ><img onclick="onDeleteBtn()" class="icon-img "  src="icons/trash.png"></div>
+                </div>
+          
+                <div class="editor-wrap2 grid-container2">
+                  <div class="icon-wrap flex inc-font" onclick="onChangeFontSize('+10')"><img class="icon-img " src="icons/increase font - icon.png"></div>
+                  <div class="icon-wrap flex dec-font" onclick="onChangeFontSize('-10')"><img class="icon-img " src="icons/decrease font - icon.png"></div>
+                  <div class="icon-wrap flex fill-color"><img class="icon-img" src="icons/paint-board-and-brush.png"  onclick="onClickChangeFillColor(this.value)"></div>
+                  <input class="fill-color1" type="color" value= "#FFFFFF" onchange="onChangeFillColor(this.value)" hidden>
+                  <div class="icon-wrap flex stroke-color" onclick="onChangeFillColor1(this.value)"><img class="icon-img " src="icons/text stroke.png"></div>
+                </div>
+            </div>
+          </div>
+        </div>
     </section>
   </main>
 
-  <footer></footer>
+  <footer class="full"></footer>
+  
+
+  
+<script>
+  function toggleMenu() {
+    document.body.classList.toggle('menu-open')
+  }
+
+  function onClickChangeFillColor() {
+    var elColor = document.querySelector('.fill-color3');
+    elColor.click();
+  }
+
+</script>
+
 
   <script src="js/services/meme.service.js"></script>
   <script src="js/gallery.controller.js"></script>

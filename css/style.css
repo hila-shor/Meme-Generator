@@ -1,81 +1,40 @@
-*{
-  box-sizing: border-box;
-}
+/* Setup */
+@import './setup/vars.css';
+@import './setup/font-face.css';
 
-/* helpers */
-.display-none{
-  display: none;
-}
-.flex{
-  display: flex;
-}
-.justify-center{
-  justify-content: center;
-}
+/* Basic */
+@import './basic/base.css';
+@import './basic/icons.css';
+/* @import './basic/icons.css'; */
+@import './basic/helpers.css';
+@import './basic/layout.css';
+
+/* Cmps */
+@import './cmps/header.css';
+@import './cmps/imgs-gallery.css';
+@import './cmps/editor.css';
+/* @import './cmps/dropdown.css'; */
+/* @import './cmps/footer.css'; */
+
+
 
 /* COMPONENTS */
-
-/* GALLERY */
-.gallery{
-  border: 2px solid;
-width: 70vw;
-height: 70vh;
-padding: 2rem;
-overflow: scroll;
-}
-.filters{
-  margin-bottom: 1rem;
-  border: 2px solid;
-  width: 70vw;
-  height: 10vh;
-  }
-
-.imgs-gallery{
-  object-fit: fill;
-  border: 2px solid;
-  padding: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;
+body{
+  border: 1px solid var(--clr1);
 }
 
-.img{
-  object-fit: cover;
-  max-width:200px;
-  height: auto;
-  border-radius: 5px;
+
+
+
+
+
+footer{
+  /* width: 100vw; */
+  height: 207px;
+  background-color: var(--clr3);
 }
 
-.filters{
-width: 100%;
-}
-.imgs-gallery{
-
-}
-
-/* EDITOR CONTAINER */
-.editor-contanier{
-  border: 2px solid;
-  width:70vw;
-  height: 40vh;
-  padding: 3rem;
-}
-
-.canvas-container{
-  border: 2px solid;
-  flex-basis: 70%;
-  background-color: yellow;
-
-}
-.editor{
-  border: 2px solid;
-  flex-basis: 30%;
-}
-canvas{
-  display: block;
-  outline: 2px solid;
-  margin: auto;
-  
-
-}
+ /* .add-line{
+width: 20px;
+height: 20px;
+ } */

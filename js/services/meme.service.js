@@ -117,23 +117,3 @@ function getgImgs() {
   return gImgs;
 }
 
-
-
-
-// function renderMeme() {
-//   console.log('hi from render meme')
-//   const elImg = new Image() // Create a new html img element
-//   var meme = getMeme()
-//   var lineIdx = meme.selectedLineIdx
-//   var linePosX = meme.lines[0].x
-//   var linePosY = meme.lines[0].y
-//   console.log('gMeme :', linePosX)
-//   var txt = meme.lines[0].txt
-//   // console.log('txt from render', meme.lines[0].txt)
-//   elImg.src = meme.selectedImgUrl
-//   // console.log(meme.selectedImgUrl)
-//   elImg.onload = () => {
-//     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-//     drawText(txt, linePosX, linePosY)
-//   }
-// }

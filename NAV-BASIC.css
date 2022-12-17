@@ -1,0 +1,84 @@
+<style>
+  /* Navigation Bar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+  }
+
+  /* Navigation Links */
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  /* Hamburger Menu */
+  .navbar .menu {
+    display: none;
+    cursor: pointer;
+  }
+
+  /* Media Query for Smaller Screens */
+  @media screen and (max-width: 600px) {
+    .navbar a {
+      display: none;
+    }
+
+    .navbar .menu {
+      display: block;
+    }
+  }
+
+  /* Dropdown Menu */
+  .navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Dropdown Links */
+  .navbar .dropdown-menu a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Dropdown Link Hover */
+  .navbar .dropdown-menu a:hover {
+    background-color: #ddd;
+  }
+
+  /* Show Dropdown on Hover */
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+</style>
+
+<nav class="navbar">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+  <div class="menu">
+    <div class="dropdown">
+      <i class="fas fa-bars"></i>
+      <div class="dropdown-menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+/* //This code uses a flexbox layout for the navigation bar, and uses media queries to hide the navigation links on smaller screens and display the hamburger menu instead. When the hamburger menu is clicked, it displays a dropdown menu with the navigation links.
+
+I hope this helps! Let me know if you have any questions. */

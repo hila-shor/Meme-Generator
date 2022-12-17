@@ -1,0 +1,19 @@
+:root {
+  /* pallete */
+  /* header color */
+  --clr0: #040A2C;
+  /* brand color */
+  --clr1: #707070;
+  /* paragraph color */
+  --clr2: #FFFFFF;
+  /* card title color */
+  --clr3: #FF7F00;
+  
+  --clr4: #E3E3E3;
+  /* white color */
+ 
+  /* bp */
+  --s: 400px;
+  --m: 600px;
+  --l: 1050px;
+}
